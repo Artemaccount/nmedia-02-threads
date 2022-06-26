@@ -35,8 +35,7 @@ class PostRepositoryImpl : PostRepository {
             }
     }
 
-    override fun likeById(id: Long) {
-        val post = getAll().find { post -> post.id == id }
+    override fun likeById(post: Post) {
         if (post != null) {
             if (post.likedByMe) {
                 deleteLike(post.id)
